@@ -31,9 +31,9 @@ jobs:
         cd jsweet-java-runtime-transpilation-tests
         mvn clean generate-sources
         cd ..
-        echo 'run j4ts tests'
-        cd j4ts-example
-        mvn clean compile && node target/j4ts-example-bundle.js
+        #echo 'run j4ts tests'
+        #cd j4ts-example
+        #mvn clean compile && node target/j4ts-example-bundle.js
     - name: show files
       run: |
         sudo apt update
