@@ -34,6 +34,8 @@ jobs:
         echo 'run j4ts tests'
         cd j4ts-example
         mvn clean compile && node target/j4ts-example-bundle.js
+    - name: show files
+      run: |
         sudo apt update
         sudo apt install tree
         tree -a ./
