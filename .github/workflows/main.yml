@@ -21,18 +21,21 @@ jobs:
       run: |
         export JSWEET_VERBOSE=false
         mvn clean install
-        #cd transpiler
-        #mvn clean install
-        #cd ..
-        #echo 'clone test repositories'
-        #git clone https://github.com/lgrignon/jsweet-java-runtime-transpilation-tests.git
-        #git clone https://github.com/lgrignon/j4ts-example.git
-        #echo 'transpile legacy j4ts sources'
-        #cd jsweet-java-runtime-transpilation-tests
-        #mvn clean generate-sources
-        #cd ..
-        #echo 'run j4ts tests'
-        #cd j4ts-example
-        #mvn clean compile && node target/j4ts-example-bundle.js
+        cd transpiler
+        mvn clean install
+        cd ..
+        echo 'clone test repositories'
+        git clone https://github.com/lgrignon/jsweet-java-runtime-transpilation-tests.git
+        git clone https://github.com/lgrignon/j4ts-example.git
+        echo 'transpile legacy j4ts sources'
+        cd jsweet-java-runtime-transpilation-tests
+        mvn clean generate-sources
+        cd ..
+        echo 'run j4ts tests'
+        cd j4ts-example
+        mvn clean compile && node target/j4ts-example-bundle.js
+        sudo apt update
+        sudo apt install tree
+        tree -a ./
 
 
